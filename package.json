@@ -1,0 +1,20 @@
+{
+  "name": "aulateste",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Lais",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx --test"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.5.0"
+  }
+}
