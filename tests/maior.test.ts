@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { maior } from "./index.js"
+import { maior } from "../index.js"
 
 test("Entre dois números inteiros, deve-se retornar o maior", () => {
     assert.deepStrictEqual(maior(1, 2), 2);

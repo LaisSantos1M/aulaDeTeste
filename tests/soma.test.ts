@@ -10,12 +10,11 @@ test("Deve somar dois números e retornar a soma",
 
 test("Deve  retornar erro se o usuario passar parâmetros que não são numeros",
     //@ts-ignore
-    () => {assert.stricEqual(soma("string", true), "Me envie numeros!")}
+    () => {assert.strictEqual(soma("string", true), "Me envie números!")}
 )
 
 test("Deve  retornar erro se não tiver parâmetros",
     () => {
         //@ts-ignore
-        assert.stricEqual(soma(), "Me envie numeros!");
-});
-
+        assert.strictEqual(soma(), "Me envie números!");
+    })

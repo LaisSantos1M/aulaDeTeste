@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import { removerDuplicados } from "../index.js";
 
+
 test("Deve remover caracteres duplicados em uma string simples", () => {
   assert.deepStrictEqual(removerDuplicados("aabbcc"), "abc");
   assert.deepStrictEqual(removerDuplicados("aaaa"), "a");

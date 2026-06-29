@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { menor } from "./index.js"
+import { menor } from "../index.js"
 
 test("Entre dois números inteiros, deve-se retornar o menor", () => {
     assert.deepStrictEqual(menor(1, 2), 1);

@@ -5,31 +5,36 @@ export function soma(number1: number, number2: number) {
 
     return number1 + number2;
 }
+export function mediaDaLista(numeros: number[]) {
+    if (numeros.length === 0) {
+        return "Me dê números";
+    }
+
+    return somatorio(numeros) / numeros.length;
+}
 
 export function fibonacci(quantity: number) {
-    if (quantity === 0){
-        return[];
-    }
-    if (quantity === 1){
-        return[1];
-    }
-    if (quantity < 0) {
-        return "Mê dê um número positivo!"
-    }
-    if (quantity % 1) {
+  if (quantity === 0) {
+    return [];
+  }
+  if (quantity === 1) {
+    return [1];
+  }
+  if (quantity < 0) {
+    return "Me dê um número positivo!";
+  }
+  if (quantity % 1 !== 0) {
+    return "Me dê um número inteiro!";
+  }
+  if (quantity > 50) {
+    return "Me dê um número menor ou igual a 50";
+  }
 
-    }
-    if (quantity > 50) {
-        return "Me dê um número inteiro!"
-    }
-
-
-
-    const sequencia = [ 1, 1];
-    for (let i = 2; i < quantity; i++) {
-        sequencia.push(sequencia[i-1]! + sequencia[i-2]!);
-    }
-    return sequencia;
+  const sequencia = [1, 1];
+  for (let i = 2; i < quantity; i++) {
+    sequencia.push(sequencia[i - 1]! + sequencia[i - 2]!);
+  }
+  return sequencia;
 }
 
 export function media(number1: number, number2: number) {
@@ -43,12 +48,13 @@ export function ehPar(numero: number) {
 }
 
 export function maior(numero1: number, numero2: number) {
-    return numero1 > numero2 ? numero1 : numero2;
-
+  if (numero1 === numero2) return "Números iguais";
+  return numero1 > numero2 ? numero1 : numero2;
 }
 
 export function menor(numero1: number, numero2: number) {
-    return numero1 < numero2 ? numero1 : numero2;
+  if (numero1 === numero2) return "Números iguais";
+  return numero1 < numero2 ? numero1 : numero2;
 }
 
 export function aprovado(nota: number) {
@@ -88,7 +94,10 @@ export function contarCaracteres(texto: string, letra: string) {
 }
 
 export function inverter(texto: string) {
-    return texto.split("").reverse().join;
+  if (texto === "") return "Me dê uma string";
+  if (texto.length === 1) return "Me dê uma string com no mínimo 2 caracteres";
+
+  return texto.split("").reverse().join("");
 }
 
 export function contarVogais(texto: string) {
@@ -112,11 +121,6 @@ export function maiorDaLista(numeros: number[]) {
     return Math.max(...numeros);
 }
 
-export function mediaDaLista(numeros: number[]) {
-
-    return somatorio(numeros) / numeros.length;
-}
-
 export function contagemRegressiva(quantidade: number) {
   if (quantidade < 0) return "Me dê um número positivo";
   if (!Number.isInteger(quantidade)) return "Me dê um número inteiro";
@@ -131,12 +135,15 @@ export function contagemRegressiva(quantidade: number) {
 }
 
 export function fatorial(numero: number) {
-    let resultado = 1;
+  if (numero < 0) return "Me dê um número maior ou igual a 0";
+  if (!Number.isInteger(numero)) return "Me dê um número inteiro";
+  if (numero > 170) return "Me dê um número menor ou igual a 170";
 
-    for (let i = 2; i <= numero; i++) {
-        resultado *= i;
-    }
-    return resultado
+  let resultado = 1;
+  for (let i = 2; i <= numero; i++) {
+    resultado *= i;
+  }
+  return resultado;
 }
 
 export function ehPalindromo(texto: string) {
@@ -161,7 +168,10 @@ export function ehPrimo(numero: number) {
   return true;
 }
 export function removerDuplicados(texto: string) {
-    return [...new Set(texto.split("").join(""))];
+  if (texto === "") return "Me dê caracteres";
+
+  return [...new Set(texto.replaceAll(" ", "").split(""))].join("");
+
 }
 
 export function ordemAlfabetica(texto: string) {
